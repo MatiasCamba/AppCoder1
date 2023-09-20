@@ -1,8 +1,23 @@
-import Home from './src/screens/Home';
+import StackNavigator from './src/navigation/StackNavigation'
+import {useFonts} from 'expo-font';
+import fonts from './src/global/fonts';
+
 
 export default function App() {
-  return (
-   <Home/>
-  );
+  
+  const [fontsLoaded] = useFonts(fonts)
+
+  
+
+  if(!fontsLoaded){
+    return null
+  }
+
+
+  return <StackNavigator/>
+
+
+
+  
 }
 
