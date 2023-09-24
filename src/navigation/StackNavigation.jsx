@@ -1,8 +1,7 @@
-import { NavigationContainer } from "@react-navigation/native";
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Home, Products, Details } from '../screens/Index';
 
-import { Button, View } from "react-native";
 
 
 const Stack = createNativeStackNavigator();
@@ -10,25 +9,13 @@ const Stack = createNativeStackNavigator();
 function StackNavigator() {
     return (
 
-        <NavigationContainer>
+       
 
             <Stack.Navigator
                 initialRouteName='Home'
                 screenOptions={({ route, navigation }) => ({
 
-                    header: () => (
-                        <View style={{
-                            flexDirection: 'row',
-                            margin: 5,
-
-
-                        }}>
-                            <Button
-                                title="Atras"
-                                onPress={() => navigation.goBack()} />
-                            {/*  <Header title={'Tienda'} /> */}
-                        </View>
-                    )
+                    headerShown:false,
                 })}>
 
                 <Stack.Screen name='Home' component={Home} />
@@ -37,7 +24,7 @@ function StackNavigator() {
 
             </Stack.Navigator>
 
-        </NavigationContainer>
+        
     )
 }
 

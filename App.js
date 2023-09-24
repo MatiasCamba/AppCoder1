@@ -1,23 +1,27 @@
 import StackNavigator from './src/navigation/StackNavigation'
-import {useFonts} from 'expo-font';
+import { useFonts } from 'expo-font';
 import fonts from './src/global/fonts';
+import { NavigationContainer } from "@react-navigation/native";
+import BottomTabNavigator from './src/navigation/BottomTabNavigator'
 
 
 export default function App() {
-  
+
   const [fontsLoaded] = useFonts(fonts)
 
-  
 
-  if(!fontsLoaded){
+
+  if (!fontsLoaded) {
     return null
   }
 
 
-  return <StackNavigator/>
+  return (<NavigationContainer>
+    <BottomTabNavigator />
+  </NavigationContainer>)
 
 
 
-  
+
 }
 

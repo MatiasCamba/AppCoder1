@@ -40,47 +40,4 @@ export default [
         
         
 
-    },
-    {
-
-        id: 4,
-        title: 'Pollo kung pao',
-        description: 'Un simple pollo kung pao',
-        price:9000,
-        stock : 100,
-        category : 'Salados',
-        image : 'https://elsantodelrock.files.wordpress.com/2017/06/pollo-kung-pao.jpg?w=584&h=497'
-        
-        
-        
-
-    },
-    {
-
-        id: 5,
-        title: 'Tiramisu',
-        description: 'Un simple tiramisu',
-        price:4500,
-        stock : 250,
-        category : 'Dulces',
-        image : 'https://binga.cl/cdn/shop/articles/tiramisu-receta-original.jpg?v=1644419306'
-        
-        
-        
-
-    },
-    {
-
-        id: 6,
-        title: 'Affogato',
-        description: 'Un simple Affogato',
-        price:1500,
-        stock : 180,
-        category : 'Bebidas',
-        image : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlJKao2-5FDyKjCzTdm5hw7KyKJyzPNsMWGjxYMX8gQXkpLK7ZfHgP6MNwvr_S3wdXk4w&usqp=CAU'
-        
-        
-        
-
-    },
-]
+    }, ]
