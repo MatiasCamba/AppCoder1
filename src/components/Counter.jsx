@@ -49,7 +49,7 @@ const dispatch = useDispatch()
 
           value= {inputToAdd}
 
-          onChangeText={ value => setInputToAdd(value)}
+          onChangeText={ value => setInputToAdd(Number(value))}
 
         />
 
