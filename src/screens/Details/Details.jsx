@@ -3,7 +3,9 @@ import React from 'react'
 import {Header} from '../../components/Index'
 import styles from './Details.style'
 
+
 const Details = ({route }) => {
+ 
   const {product} = route.params
   return (
     <View style={styles.container}>
@@ -12,7 +14,10 @@ const Details = ({route }) => {
       <Text style={styles.title}>{product.title}</Text>
       <Text>{product.description}</Text>
       <Text style={styles.price}>{`$ ${product.price}`}</Text> 
+     
+      
     </View>
+    
   )
 }
 
