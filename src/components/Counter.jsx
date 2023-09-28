@@ -2,13 +2,17 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 
  
 
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { increment,decrement,incrementByAmount } from '../features/counter/CounterSlice'
 
  
 
 const Counter = () => {
+
+const [inputToAdd , setInputToAdd] =useState(0)   
 const counter = useSelector(state => state.counter.value) 
+const dispatch = useDispatch()
  
 
   return (
@@ -17,7 +21,7 @@ const counter = useSelector(state => state.counter.value)
 
       <View style={styles.counterContainer}>
 
-        <Pressable style={styles.counterButtons}>
+        <Pressable style={styles.counterButtons} onPress={() => dispatch(decrement())}>
 
           <Text style={styles.signs}>-</Text>
 
@@ -25,7 +29,7 @@ const counter = useSelector(state => state.counter.value)
 
         <Text style={styles.signs}>{counter}</Text>
 
-        <Pressable style={styles.counterButtons}>
+        <Pressable style={styles.counterButtons} onPress={() => dispatch(increment())}>
 
           <Text style={styles.signs}>+</Text>
 
@@ -43,9 +47,13 @@ const counter = useSelector(state => state.counter.value)
 
           placeholder="cantidad a sumar"
 
+          value= {inputToAdd}
+
+          onChangeText={ value => setInputToAdd(value)}
+
         />
 
-        <Pressable>
+        <Pressable onPress={() => dispatch(incrementByAmount(inputToAdd))}>
 
           <Text>add</Text>
 
