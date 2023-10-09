@@ -1,29 +1,38 @@
 import { View, FlatList } from 'react-native'
 import React from 'react'
-import dataCategories from '../../data/dataCategories'
 import { Header } from '../../components/Index'
 import { CategoryItem } from './Components/Index'
 import styles from './Home.style'
-import Counter from '../../components/Counter'
+import { useGetCategoriesQuery } from '../../services/shopApi'
 
 
 
 
 
-const Home = ({  navigation }) => {
+
+const Home = ({ navigation }) => {
+  const { data, isLoading } = useGetCategoriesQuery()
   return (
     <View style={styles.container}>
-      <Counter/>
-      
+
+
       <Header title={'Categorias'} />
-      <FlatList data={dataCategories}
-        keyExtractor={category => category}
-        renderItem={({ item }) => (
-          <CategoryItem
-            category={item}
-            navigation={navigation} />
-        )}
-      />
+      {!isLoading && (
+        <FlatList data={data}
+          keyExtractor={categories => categories.title}
+          renderItem={({ item }) => (
+            <CategoryItem
+              category={item.title}
+              navigation={navigation} />
+          )}
+        />
+      
+      )
+        
+
+      }
+      
+
     </View>
 
 

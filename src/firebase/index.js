@@ -1,0 +1,1 @@
+export const baseUrl = 'https://commerceapp-46e2f-default-rtdb.firebaseio.com/'
