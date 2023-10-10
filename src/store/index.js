@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { shopApi } from '../services/shopApi';
 import shopSlice from '../features/shop/shopSlice';
+import cartSlice from '../features/cart/cartSlice';
 
  const store = configureStore({
 
@@ -9,6 +10,7 @@ import shopSlice from '../features/shop/shopSlice';
 
 
         shop: shopSlice,
+        cart : cartSlice,
         [shopApi.reducerPath]: shopApi.reducer
 
     },
